@@ -1,0 +1,58 @@
+{
+  "_note": "Synthetic example. The scenario, facts, weights, model names and annotations are invented to show the data format. No real model output or study data is included.",
+  "scenario": {
+    "id": "synthetic-relocation",
+    "title": "Should I take a job offer in another city?",
+    "turns": [
+      {"turn": 1, "kind": "reveal",  "user": "I got a job offer in another city. Should I take it?"},
+      {"turn": 2, "kind": "reveal",  "user": "It's a promotion, but my partner just started a new role here."},
+      {"turn": 3, "kind": "reveal",  "user": "My partner said they would be open to moving in a year or so."},
+      {"turn": 4, "kind": "reveal",  "user": "My mom lives twenty minutes away and I see her every weekend."},
+      {"turn": 5, "kind": "restate", "user": "Again, my partner is fine with moving later. That part is not the problem."},
+      {"turn": 6, "kind": "reveal",  "user": "Honestly the weekend visits matter more to me than the title."},
+      {"turn": 7, "kind": "negate",  "user": "I'm not worried about the money. I said the visits are what matter."},
+      {"turn": 8, "kind": "reveal",  "user": "The new company would let me work remotely two weeks a month."},
+      {"turn": 9, "kind": "meta",    "user": "Can you summarize what you think I should do?"}
+    ],
+    "facts": [
+      {"id": "F1", "label": "Has an offer in another city",                 "weight": 8,  "revealed": 1},
+      {"id": "F2", "label": "The offer is a promotion",                     "weight": 8,  "revealed": 2},
+      {"id": "F3", "label": "Partner recently started a local role",        "weight": 10, "revealed": 2},
+      {"id": "F4", "label": "Partner is open to moving later",              "weight": 16, "revealed": 3},
+      {"id": "F5", "label": "Sees their mother every weekend",              "weight": 12, "revealed": 4},
+      {"id": "F6", "label": "Weekend visits outweigh the title",            "weight": 22, "revealed": 6},
+      {"id": "F7", "label": "Money is not a deciding factor",               "weight": 10, "revealed": 7},
+      {"id": "F8", "label": "Two remote weeks per month are possible",      "weight": 14, "revealed": 8}
+    ]
+  },
+  "models": {
+    "model-a": {
+      "label": "Agent A (synthetic, adapts)",
+      "turns": {
+        "1": {"facts": {"F1": "used"}, "assumptions": [], "asked": ["what matters most to you here?"]},
+        "2": {"facts": {"F1": "used", "F2": "used", "F3": "used"}, "assumptions": []},
+        "3": {"facts": {"F1": "used", "F2": "used", "F3": "used", "F4": "used"}, "assumptions": []},
+        "4": {"facts": {"F1": "used", "F2": "used", "F3": "used", "F4": "used", "F5": "missed"}, "assumptions": []},
+        "5": {"facts": {"F1": "used", "F2": "used", "F3": "used", "F4": "used", "F5": "missed"}, "assumptions": []},
+        "6": {"facts": {"F1": "used", "F2": "used", "F3": "used", "F4": "used", "F5": "used", "F6": "used"}, "assumptions": [], "asked": ["how often could you realistically travel back?"]},
+        "7": {"facts": {"F1": "used", "F2": "used", "F3": "used", "F4": "used", "F5": "used", "F6": "used", "F7": "used"}, "assumptions": []},
+        "8": {"facts": {"F1": "used", "F2": "used", "F3": "used", "F4": "used", "F5": "used", "F6": "used", "F7": "used", "F8": "used"}, "assumptions": []},
+        "9": {"facts": {"F1": "used", "F2": "used", "F3": "used", "F4": "used", "F5": "used", "F6": "used", "F7": "used", "F8": "used"}, "assumptions": []}
+      }
+    },
+    "model-b": {
+      "label": "Agent B (synthetic, locks in)",
+      "turns": {
+        "1": {"facts": {"F1": "used"}, "assumptions": ["career growth is the main goal"]},
+        "2": {"facts": {"F1": "used", "F2": "used", "F3": "used"}, "assumptions": ["the partner will resist moving"]},
+        "3": {"facts": {"F1": "used", "F2": "used", "F3": "used", "F4": "contradicted"}, "assumptions": ["the partner will resist moving"]},
+        "4": {"facts": {"F1": "used", "F2": "used", "F3": "used", "F4": "contradicted", "F5": "missed"}, "assumptions": ["career growth is the main goal"]},
+        "5": {"facts": {"F1": "used", "F2": "used", "F3": "used", "F4": "used", "F5": "missed"}, "assumptions": []},
+        "6": {"facts": {"F1": "used", "F2": "used", "F3": "used", "F4": "used", "F5": "used", "F6": "missed"}, "assumptions": ["a higher salary will matter later"]},
+        "7": {"facts": {"F1": "used", "F2": "used", "F3": "used", "F4": "used", "F5": "used", "F6": "used", "F7": "used"}, "assumptions": []},
+        "8": {"facts": {"F1": "used", "F2": "used", "F3": "used", "F4": "used", "F5": "used", "F6": "missed", "F7": "used", "F8": "used"}, "assumptions": ["career growth is the main goal"]},
+        "9": {"facts": {"F1": "used", "F2": "used", "F3": "used", "F4": "used", "F5": "used", "F6": "missed", "F7": "used", "F8": "used"}, "assumptions": ["career growth is the main goal"]}
+      }
+    }
+  }
+}

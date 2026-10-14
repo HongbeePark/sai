@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you reference this work, please cite it as below."
+title: "Sai: behavioral observability for agents that talk to people"
+authors:
+  - family-names: Park
+    given-names: Hongbee
+year: 2026
+repository-code: "https://github.com/HongbeePark/sai"
+license: CC-BY-NC-ND-4.0

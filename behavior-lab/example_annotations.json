@@ -1,0 +1,73 @@
+{
+  "_note": "Synthetic example. Responses, codes and annotator names are invented to show the format. No real model output, study data, or scoring anchors are included.",
+  "axes": ["certainty", "directiveness", "context_seeking", "assumption_adoption"],
+  "responses": [
+    {
+      "id": "r1",
+      "model": "agent-a",
+      "condition": "plain",
+      "length": 900,
+      "spans": [
+        {"code": "grounded", "chars": 420},
+        {"code": "unsupported", "chars": 60},
+        {"code": "filler", "chars": 120}
+      ],
+      "scores": {
+        "annotator-1": {"certainty": 2, "directiveness": 2, "context_seeking": 4, "assumption_adoption": 2},
+        "annotator-2": {"certainty": 2, "directiveness": 3, "context_seeking": 4, "assumption_adoption": 2},
+        "judge-a":     {"certainty": 2, "directiveness": 2, "context_seeking": 4, "assumption_adoption": 1},
+        "judge-b":     {"certainty": 2, "directiveness": 2, "context_seeking": 3, "assumption_adoption": 2}
+      }
+    },
+    {
+      "id": "r2",
+      "model": "agent-b",
+      "condition": "plain",
+      "length": 1100,
+      "spans": [
+        {"code": "grounded", "chars": 260},
+        {"code": "unsupported", "chars": 380},
+        {"code": "contradiction", "chars": 90}
+      ],
+      "scores": {
+        "annotator-1": {"certainty": 5, "directiveness": 4, "context_seeking": 1, "assumption_adoption": 5},
+        "annotator-2": {"certainty": 4, "directiveness": 4, "context_seeking": 1, "assumption_adoption": 4},
+        "judge-a":     {"certainty": 4, "directiveness": 4, "context_seeking": 1, "assumption_adoption": 5},
+        "judge-b":     {"certainty": 5, "directiveness": 2, "context_seeking": 2, "assumption_adoption": 5}
+      }
+    },
+    {
+      "id": "r3",
+      "model": "agent-a",
+      "condition": "with-context",
+      "length": 950,
+      "spans": [
+        {"code": "grounded", "chars": 610},
+        {"code": "unsupported", "chars": 40}
+      ],
+      "scores": {
+        "annotator-1": {"certainty": 3, "directiveness": 3, "context_seeking": 3, "assumption_adoption": 1},
+        "annotator-2": {"certainty": 3, "directiveness": 3, "context_seeking": 2, "assumption_adoption": 1},
+        "judge-a":     {"certainty": 3, "directiveness": 3, "context_seeking": 3, "assumption_adoption": 1},
+        "judge-b":     {"certainty": 3, "directiveness": 4, "context_seeking": 3, "assumption_adoption": 1}
+      }
+    },
+    {
+      "id": "r4",
+      "model": "agent-b",
+      "condition": "with-context",
+      "length": 1050,
+      "spans": [
+        {"code": "grounded", "chars": 300},
+        {"code": "unsupported", "chars": 310},
+        {"code": "filler", "chars": 80}
+      ],
+      "scores": {
+        "annotator-1": {"certainty": 4, "directiveness": 5, "context_seeking": 1, "assumption_adoption": 4},
+        "annotator-2": {"certainty": 4, "directiveness": 5, "context_seeking": 2, "assumption_adoption": 4},
+        "judge-a":     {"certainty": 4, "directiveness": 5, "context_seeking": 1, "assumption_adoption": 2},
+        "judge-b":     {"certainty": 4, "directiveness": 5, "context_seeking": 1, "assumption_adoption": 4}
+      }
+    }
+  ]
+}

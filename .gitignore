@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+
+# secrets and private data
+.env
+.env.local
+config.js
+*.sqlite3
+data/
