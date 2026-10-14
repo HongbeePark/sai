@@ -1,4 +1,4 @@
-# Sai (사이)
+# Sai
 
 Behavioral observability for agents that talk to people.
 
