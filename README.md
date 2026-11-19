@@ -4,6 +4,8 @@ Behavioral observability for agents that talk to people.
 
 Sai measures what an agent actually takes from the person it is talking to, what it fills in on its own, and whether it keeps up as the person tells it more.
 
+The open bench lives in [sai-evals/sai-bench](https://github.com/sai-evals/sai-bench).
+
 ![What the person said vs. what the agent built on](assets/hero.svg)
 
 ## Vision
